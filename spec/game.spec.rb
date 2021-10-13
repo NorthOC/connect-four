@@ -29,5 +29,44 @@ describe Game do
 			expect(game.board[4][0]).to eq('yellow')
 		end
 	end
-	describe '#win?'	
+
+	describe '#horizontal_win?' do
+		it 'returns false when the condition is not met' do
+			expect(game.horizontal_win?).to be(false)
+		end
+		
+		it 'returns true when the condition is met' do
+			expect(game.horizontal_win?.to be(true)
+		end
+	end	
+	
+	describe '#vertical_win?' do
+		it 'returns false when the condition is not met' do
+			expect(game.vertical_win?).to be(false)
+		end
+		
+		it 'returns true when vertical win condition is met' do
+			expect(game.vertical_win?).to be(true)
+		end
+	end
+	
+	describe '#ascending_win?' do
+		it 'returns false when win condition is not met' do
+			expect(game.ascending_win?).to be(false)
+		end
+		
+		it 'returns true when win condition is met' do
+			expect(game.ascending_win?).to be(true)
+		end
+	end
+
+	describe '#descending_win?' do
+		it 'returns false when win condition is not met' do
+			expect(game.descending_win?).to be(false)
+		end
+		
+		it 'returns true when win condition is met' do
+			expect(game.descending_win?).to be(true)
+		end
+	end
 end
