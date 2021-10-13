@@ -5,7 +5,8 @@ class Game
 		@board = Array.new(6) {Array.new(7, nil)}
 		@player_turn = true
 	end
-	
+
+#Game logic	
 	def place_pin(number)
 			depth = 5
 			number = number - 1
@@ -22,7 +23,13 @@ class Game
 				@board[depth][number] = 'yellow'
 			end
 	end
-	
+
+#Win condition checks	
+	def horizontal_win?
+		#ADD METHOD HERE!!!!!
+	end
+
+#Pretty print to CLI
 	def pretty_print
 		@board.each do |arr|
 			print arr
