@@ -34,9 +34,21 @@ describe Game do
 		it 'returns false when the condition is not met' do
 			expect(game.horizontal_win?).to be(false)
 		end
+
+		context 'when the condition is met' do
 		
-		it 'returns true when the condition is met' do
-			expect(game.horizontal_win?.to be(true)
+			before do
+				i = 1
+				while i < 8
+					game.place_pin(i)
+					game.place_pin(i)
+					i = i + 1
+				end
+			end
+
+			it 'returns true' do
+				expect(game.horizontal_win?).to be(true)
+			end
 		end
 	end	
 	
@@ -45,8 +57,20 @@ describe Game do
 			expect(game.vertical_win?).to be(false)
 		end
 		
-		it 'returns true when vertical win condition is met' do
-			expect(game.vertical_win?).to be(true)
+		context "when the condition is met" do
+
+			before do
+				i = 1
+				while i < 7
+					game.place_pin(1)
+					game.place_pin(3)
+					i = i + 1
+				end
+			end
+
+			it 'returns true when vertical win condition is met' do
+				expect(game.vertical_win?).to be(true)
+			end
 		end
 	end
 	
