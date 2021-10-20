@@ -1,5 +1,16 @@
+class String
+def black;          "\e[30m#{self}\e[0m" end
+def red;            "\e[31m#{self}\e[0m" end
+def green;          "\e[32m#{self}\e[0m" end
+def brown;          "\e[33m#{self}\e[0m" end
+def blue;           "\e[34m#{self}\e[0m" end
+def magenta;        "\e[35m#{self}\e[0m" end
+def cyan;           "\e[36m#{self}\e[0m" end
+def gray;           "\e[37m#{self}\e[0m" end
+end
+
 class Game
-	attr_reader :board
+	attr_reader :board, :player_turn
 
 	def initialize
 		@board = Array.new(6) {Array.new(7, nil)}
@@ -105,9 +116,21 @@ class Game
 		
 #Pretty print to CLI
 	def pretty_print
+		bullet = "●"
 		@board.each do |arr|
-			print arr
+			print "|"
+			arr.each do |item|
+				if item == '0'
+					print " #{bullet.blue}  "
+				elsif item == '1'
+					print " #{bullet.red}  "
+				else
+					print ' ○  '
+				end
+			end
+			print "|"
 			print "\n"
 		end
+		print "  1   2   3   4   5   6   7  "
 	end
 end

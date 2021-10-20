@@ -74,23 +74,26 @@ describe Game do
 		end
 	end
 	
-	describe '#ascending_win?' do
+	describe '#asceding_descending_win?' do
 		it 'returns false when win condition is not met' do
-			expect(game.ascending_win?).to be(false)
+			expect(game.ascending_descending_win?).to be(false)
 		end
 		
-		it 'returns true when win condition is met' do
-			expect(game.ascending_win?).to be(true)
+		context "when condition is met" do
+			before do
+				game.place_pin(1)
+				2.times {game.place_pin(2)}
+				game.place_pin(5)
+				3.times {game.place_pin(3)}
+				3.times {game.place_pin(4)}
+				game.place_pin(4)	
+			end
+			
+		
+			it 'returns true' do
+				expect(game.ascending_descending_win?).to be(true)
+			end
 		end
-	end
 
-	describe '#descending_win?' do
-		it 'returns false when win condition is not met' do
-			expect(game.descending_win?).to be(false)
-		end
-		
-		it 'returns true when win condition is met' do
-			expect(game.descending_win?).to be(true)
-		end
 	end
 end
