@@ -16,8 +16,8 @@ describe Game do
 				game.place_pin(1)
 			end
 
-		it 'places a red pin into the board' do
-			expect(game.board[5][0]).to eq('red')
+		it 'places a "0" pin into the board' do
+			expect(game.board[5][0]).to eq('0')
 			
 		end
 
@@ -25,8 +25,8 @@ describe Game do
 				game.place_pin(1)
 			end
 
-		it ' places a yellow pin above the red one' do
-			expect(game.board[4][0]).to eq('yellow')
+		it ' places a "1" pin above the red one' do
+			expect(game.board[4][0]).to eq('1')
 		end
 	end
 
