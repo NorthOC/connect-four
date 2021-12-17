@@ -1,3 +1,5 @@
-A game called Connect-Four played in CLI. Made this Test-Driven-Development style.
+# Connect-Four
 
-Feel free to try it out https://replit.com/@NorthOC/connect-four
+Hi! The game here doesn't matter. What matters is that this game was made with test-driven-development in mind using RSpec!
+
+Give it a spin: [Click Here!](https://replit.com/@NorthOC/connect-four)
